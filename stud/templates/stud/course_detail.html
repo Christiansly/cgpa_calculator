@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{course.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{course.course_code}}</h6>
+    <p class="card-text">Course Unit: {{course.unit}}</p>
+    <p class="card-text">Course Grade: {{course.get_grade_display}}</p>
+    <p class="card-text">Course Score: {{course.score}}</p>
+    <a href="{% url 'edit' course.id %}">Update</a>|
+    <a href="{% url 'delete' course.id %}">Delete</a>
+  </div>
+</div>
+{% endblock content %}

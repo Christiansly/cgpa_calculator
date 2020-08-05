@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul class="list-group">
+  <li class="list-group-item active">FIRST SEMESTER</li>
+  {% for course in 1st %}
+    
+      <li class="list-group-item"><a href = "{% url 'course-detail' course.id %}">{{course.title}}</a></li> 
+    
+  {% endfor %}
+</ul>
+<ul class="list-group">
+  <li class="list-group-item active">SECOND SEMESTER</li>
+  {% for course in 2nd %}
+    
+      <li class="list-group-item"><a href = "{% url 'course-detail' course.id %}">{{course}}</a></li>
+    
+  {% endfor %}
+</ul>
+<p>CGPA: {{cgpa}}</p>
+{% endblock content %}
